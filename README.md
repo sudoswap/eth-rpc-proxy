@@ -4,9 +4,26 @@ I wanted to use my local ethereum node for reads but send writes to an mev prote
 
 # setup
 
+```bash
+git clone https://github.com/sudoswap/eth-rpc-proxy
+cp .env.example .env
+# edit .env
+pnpm i
+pnpm build
+pnpm start
 ```
-git clone https://github.com/Sayuki0x/eth-rpc-proxy
-npm i
-npm start
+
+
+# deploy to gcp
+
+```bash
+# ensure you're logged in "gcloud auth login"
+./deploy.sh
 ```
-you should daemonize it. i recommend using pm2
+
+
+# dev server
+
+```bash
+pnpm dev
+```
