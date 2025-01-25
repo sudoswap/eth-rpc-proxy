@@ -1,0 +1,22 @@
+runtime: nodejs22
+service: rpc-proxy
+
+instance_class: F2
+
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 5
+  max_concurrent_requests: 1000
+  target_cpu_utilization: 0.75
+
+handlers:
+  - url: /.*
+    redirect_http_response_code: 301
+    script: auto
+
+# Env vars are injected by deploy.sh
+# env_variables:
+#   LOCAL_NODE: $LOCAL_NODE
+#   MEV_NODE: $MEV_NODE
+
