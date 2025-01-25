@@ -8,7 +8,7 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
-const PORT = 8546;
+const PORT = process.env.PORT || 8080;
 
 // RPC Endpoints
 const LOCAL_NODE = process.env.LOCAL_NODE;
@@ -24,6 +24,10 @@ const corsOptions = {
   methods: ["POST"],
   allowedHeaders: ["Content-Type"],
 };
+
+// May be necessary for cors to work correctly
+// https://cloud.google.com/appengine/docs/standard/nodejs/runtime#https_and_forwarding_proxies
+app.set("trust proxy", true);
 
 // Apply CORS middleware with options
 app.use(cors(corsOptions));
