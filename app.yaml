@@ -8,6 +8,9 @@ instance_class: F1
 
 
 automatic_scaling:
+  cpu_utilization:
+    target_utilization: 0.75
+  min_num_instances: 1
   max_num_instances: 5
   max_concurrent_requests: 500
   

@@ -18,6 +18,7 @@ const MEV_NODE = process.env.MEV_NODE;
 const corsOptions = {
   origin: [
     "http://localhost:3000",
+    "https://zoo-ui.vercel.app",
     "https://zoo.fun",
     /^https:\/\/.*\.zoo\.fun$/,
   ],
